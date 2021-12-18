@@ -14,7 +14,7 @@
     pageTitle += "AbpProjectName";
 }
 <!DOCTYPE html>
-<html lang="@LanguageManager.CurrentLanguage.Name">
+<html lang="@LanguageManager.CurrentLanguage.Name" dir="@(@LanguageManager.CurrentLanguage.IsRightToLeft ? "rtl" : "ltr")">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -22,7 +22,13 @@
 
     <title>@pageTitle</title>
 
-    @await Html.PartialAsync("_Styles.cshtml")
+    @if (LanguageManager.CurrentLanguage.IsRightToLeft)
+    {
+        @await Html.PartialAsync("_Styles-rtl.cshtml")
+    }
+    else{
+        @await Html.PartialAsync("_Styles.cshtml")
+    }
     @RenderSection("styles", required: false)
 </head>
 <body class="hold-transition sidebar-mini">

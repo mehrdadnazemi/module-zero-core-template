@@ -52,4 +52,8 @@
     <Folder Include="wwwroot\view-resources\Views\_Bundles\" />
   </ItemGroup>
 
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="if $(ConfigurationName) == Release powershell.exe -file ./rtl.ps1 ./wwwroot" />
+  </Target>
+
 </Project>
