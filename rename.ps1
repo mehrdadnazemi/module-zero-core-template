@@ -4,12 +4,12 @@ $OutputEncoding = [Text.UTF8Encoding]::UTF8
 # company name placeholder 
 $oldCompanyName="AbpCompanyName"
 # your company name
-$newCompanyName="YourCompanyName"
+$newCompanyName="Irisa.DT.Frame.Apps"
 
 # project name placeholder
 $oldProjectName="AbpProjectName"
 # your project name
-$newProjectName="YourProjectName"
+$newProjectName="NotificationCenter"
 
 # file type
 $fileType="FileInfo"
